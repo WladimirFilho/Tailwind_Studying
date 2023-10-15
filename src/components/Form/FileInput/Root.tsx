@@ -1,10 +1,40 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import { ComponentProps } from "react";
+"use client";
+import {
+  ComponentProps,
+  createContext,
+  useContext,
+  useId,
+  useState,
+} from "react";
 
 export type RootProps = ComponentProps<"div">;
 
+type FileInputContextType = {
+  id: string;
+  files: File[];
+  onFilesSelected: (files: File[]) => void;
+};
+
+const FileInputContext = createContext({} as FileInputContextType);
+
 export function Root(props: RootProps) {
-  return <div {...props}></div>;
+  const id = useId();
+  const [files, setFiles] = useState<File[]>([]);
+
+  return (
+    <FileInputContext.Provider
+      value={{
+        id,
+        files,
+        onFilesSelected: setFiles,
+      }}
+    >
+      <div {...props}></div>
+    </FileInputContext.Provider>
+  );
 }
+
+export const useFileInput = () => useContext(FileInputContext);

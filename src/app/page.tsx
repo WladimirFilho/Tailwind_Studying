@@ -2,8 +2,10 @@
 
 import { SettingsTabs } from "@/components/SettingsTabs";
 import * as Input from "@/components/Input";
-import { Mail } from "lucide-react";
+import { ChevronDown, Mail } from "lucide-react";
 import * as FileInput from "@/components/Form/FileInput";
+import { Select } from "@/components/Form/Select";
+import { SelectItem } from "@/components/Form/Select/SelectItem";
 
 export default function Home() {
   return (
@@ -46,7 +48,7 @@ export default function Home() {
           className="mt-6 flex w-full flex-col gap-5 divide-y divide-zinc-200"
         >
           {/* Name */}
-          <div className="grid-cols-form grid gap-3 ">
+          <div className="grid grid-cols-form gap-3 ">
             <label
               htmlFor="firstName"
               className="text-sm font-medium text-zinc-700"
@@ -64,7 +66,7 @@ export default function Home() {
           </div>
 
           {/* Email */}
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="email"
               className="text-sm font-medium text-zinc-700"
@@ -84,7 +86,7 @@ export default function Home() {
           </div>
 
           {/* Your photo */}
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="photo"
               className=" text-sm font-medium text-zinc-700"
@@ -103,7 +105,7 @@ export default function Home() {
           </div>
 
           {/* Role */}
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label htmlFor="role" className="text-sm font-medium text-zinc-700">
               Role
             </label>
@@ -113,29 +115,35 @@ export default function Home() {
           </div>
 
           {/* Country */}
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="country"
               className="text-sm font-medium text-zinc-700"
             >
               Country
             </label>
-            <div>select</div>
+            <Select placeholder="Select a country...">
+              <SelectItem value="aus" text="Australia" />
+              <SelectItem value="br" text="Brazil" />
+            </Select>
           </div>
 
           {/* Timezone */}
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="timezone"
               className="text-sm font-medium text-zinc-700"
             >
               Timezone
             </label>
-            <div>Timezone</div>
+            <Select placeholder="Select a timezone...">
+              <SelectItem value="br" text="Pacific Standard Time" />
+              <SelectItem value="aus" text="Australia Standard Time" />
+            </Select>
           </div>
 
           {/* Bio */}
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label htmlFor="bio" className=" text-sm font-medium text-zinc-700">
               Bio
               <span className="mt-0.5 block text-sm font-normal text-zinc-500">
@@ -145,7 +153,7 @@ export default function Home() {
           </div>
 
           {/*  Portfolio projects */}
-          <div className="grid-cols-form grid gap-3 pt-5">
+          <div className="grid grid-cols-form gap-3 pt-5">
             <label
               htmlFor="projects"
               className=" text-sm font-medium text-zinc-700"
