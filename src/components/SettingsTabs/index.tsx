@@ -60,7 +60,7 @@ export function SettingsTabs() {
           <TabItem
             value="tab-10"
             title="Plan"
-            isSelected={currentTab === "tab-9"}
+            isSelected={currentTab === "tab-10"}
           />
         </Tabs.List>
       </Tabs.Root>

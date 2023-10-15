@@ -4,12 +4,14 @@ import { ComponentProps } from "react";
 
 type InputPrefixProps = ComponentProps<"div">;
 
+// Icon
 export function Prefix(props: InputPrefixProps) {
   return <div {...props} />;
 }
 
 type InputControlProps = ComponentProps<"input">;
 
+// Input itself
 export function Control(props: InputControlProps) {
   return (
     <input
@@ -21,6 +23,7 @@ export function Control(props: InputControlProps) {
 
 export type InputRootProps = ComponentProps<"div">;
 
+// Div container for both input and prefix controls
 export function Root(props: InputRootProps) {
   return (
     <div
